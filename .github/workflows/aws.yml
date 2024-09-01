@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: "3.12"
           cache: "pip"
-      - run: pip install --target . -r requirements.txt
+      - run: pip install --target . -r ./app/requirements.txt
 
       - name: Zip
         run: |
