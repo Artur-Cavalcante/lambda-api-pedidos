@@ -29,7 +29,7 @@ def lambda_handler(event: APIGatewayProxyEvent, context) -> dict:
 # event = {
 #     "httpMethod": "POST",
 #     "path": "/realizar_pagamento",
-#     "body": {
+#     "body": json.dumps({
 #         "id_pedido": 123,
 #         "id_cliente": 456,
 #         "email_cliente": "teste@mailinator.com",
@@ -45,7 +45,7 @@ def lambda_handler(event: APIGatewayProxyEvent, context) -> dict:
 #                 "valor": 8.50
 #             }
 #         ]
-#     }
+#     })
 # }
 
 # try:
