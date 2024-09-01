@@ -18,7 +18,7 @@ def lambda_handler(event: APIGatewayProxyEvent, context) -> dict:
     if request in handlers:
         logger.info(f"Event: {event.body}")
         method = handlers[request]
-        response = method(event.body)
+        response = method(json.loads(event.body))
         return response
     
     return {
