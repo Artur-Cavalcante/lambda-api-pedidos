@@ -31,10 +31,8 @@ def lambda_handler(event: APIGatewayProxyEvent, context) -> dict:
 #     "path": "/realizar_pagamento",
 #     "body": {
 #         "id_pedido": 123,
-#         "id_client": 456,
-#         "pagamento": {
-#           ""  
-#         },
+#         "id_cliente": 456,
+#         "email_cliente": "teste@mailinator.com",
 #         "itens": [
 #             {
 #                 "nome": "hamburguer",
