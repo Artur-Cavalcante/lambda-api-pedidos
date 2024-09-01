@@ -13,7 +13,7 @@ class PedidoService():
     def enviar_fila_pagamento(self, pedido: dict):
         self.logger.info(f"Enviando pedido {pedido['id_pedido']} para fila de pagamento.")
         
-        response = self.sqs_client.send_message(self.url_fila_pagamentos, json.dumps(pedido))
+        response = self.sqs_client.send_message(QueueUrl=self.url_fila_pagamentos, MessageBody=json.dumps(pedido))
         status_code: int = response.status_code
         
         self.logger.info(f"Pedido enviado para fila de pagamento: {status_code}")
