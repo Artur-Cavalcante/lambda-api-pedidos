@@ -6,7 +6,7 @@ from src.services.pedido_service import PedidoService
 
 logger = Logger(service="api-pedidos")
 pedido_service = PedidoService(logger) 
-
+ 
 handlers = {
     ("POST", "/realizar_pagamento"): pedido_service.enviar_fila_pagamento,
     ("PUT", "/confirmar_pagamento"): pedido_service.confirmar_pagamento
