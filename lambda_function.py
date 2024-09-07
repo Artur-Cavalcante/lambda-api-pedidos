@@ -10,7 +10,7 @@ pedido_service = PedidoService(logger)
 handlers = {
     ("POST", "/realizar_pagamento"): pedido_service.enviar_fila_pagamento,
     ("PUT", "/confirmar_pagamento"): pedido_service.confirmar_pagamento
-}
+} 
 
 @event_source(data_class=APIGatewayProxyEvent)
 def lambda_handler(event: APIGatewayProxyEvent, context) -> dict:
