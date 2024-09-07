@@ -5,7 +5,7 @@ from aws_lambda_powertools.utilities.data_classes import event_source, APIGatewa
 from src.services.pedido_service import PedidoService
 
 logger = Logger(service="api-pedidos")
-pedido_service = PedidoService(logger)
+pedido_service = PedidoService(logger) 
 
 handlers = {
     ("POST", "/realizar_pagamento"): pedido_service.enviar_fila_pagamento,
