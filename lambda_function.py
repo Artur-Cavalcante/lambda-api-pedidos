@@ -12,7 +12,7 @@ handlers = {
     ("PUT", "/confirmar_pagamento"): pedido_service.confirmar_pagamento
 } 
 
-@event_source(data_class=APIGatewayProxyEvent)
+@event_source(data_class=APIGatewayProxyEvent) 
 def lambda_handler(event: APIGatewayProxyEvent, context) -> dict:
     request = (event.http_method, event.path)
     if request in handlers:
