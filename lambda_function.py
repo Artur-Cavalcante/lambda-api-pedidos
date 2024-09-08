@@ -14,6 +14,8 @@ handlers = {
 
 @event_source(data_class=APIGatewayProxyEvent) 
 def lambda_handler(event: APIGatewayProxyEvent, context) -> dict:
+    print(event)
+    logger.info(event)
     request = (event.http_method, event.path)
     if request in handlers:
         logger.info(f"Event: {event.body}")
@@ -29,7 +31,8 @@ def lambda_handler(event: APIGatewayProxyEvent, context) -> dict:
 # event = {
 #     "httpMethod": "POST",
 #     "path": "/realizar_pagamento",
-#     "body": json.dumps({
+#     "body": json.dumps(
+# {
 #         "id_pedido": 123,
 #         "id_cliente": 456,
 #         "email_cliente": "teste@mailinator.com",
@@ -45,7 +48,8 @@ def lambda_handler(event: APIGatewayProxyEvent, context) -> dict:
 #                 "valor": 8.50
 #             }
 #         ]
-#     })
+#     }
+# )
 # }
 
 # try:
