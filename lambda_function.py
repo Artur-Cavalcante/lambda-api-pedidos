@@ -17,7 +17,7 @@ def lambda_handler(event: APIGatewayProxyEvent, context) -> dict:
     logger.info(event.http_method)
     logger.info(event.path)
     logger.info(event.body)
-     logger.info(event)
+    logger.info(event)
     request = (event.http_method, event.path)
     if request in handlers:
         logger.info(f"Event: {event.body}")
